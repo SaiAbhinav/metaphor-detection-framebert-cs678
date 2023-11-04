@@ -1,16 +1,16 @@
-# Investigating FrameBERT: Conceptual Metaphor Detection with Frame Embedding Learning
+# FrameBERT: Conceptual Metaphor Detection with Frame Embedding Learning
 
-This repository contains a copy of the implementation of the EACL 2023 paper "FrameBERT: Conceptual Metaphor Detection with Frame Embedding Learning" (https://arxiv.org/abs/2302.04834). FrameBERT is a BERT-based model that leverages FrameNet embeddings for improved metaphor detection and model explainability. Extensive experiments demonstrate the effectiveness of FrameBERT on four public benchmark datasets (VUA, MOH-X, TroFi) compared to the base model and state-of-the-art models.
+This repository contains the implementation of our EACL 2023 paper "FrameBERT: Conceptual Metaphor Detection with Frame Embedding Learning" (https://arxiv.org/abs/2302.04834). FrameBERT is a BERT-based model that leverages FrameNet embeddings for improved metaphor detection and model explainability. Our extensive experiments demonstrate the effectiveness of FrameBERT on four public benchmark datasets (VUA, MOH-X, TroFi) compared to the base model and state-of-the-art models.
 
-<!-- **Important updates**: I have just added a `inference.py` to enable quick metaphor and frame detection on your customized data. I plan to add more features in the future. So please star our project to get posted. -->
+**Important updates**: I have just added a `inference.py` to enable quick metaphor and frame detection on your customized data. I plan to add more features in the future. So please star our project to get posted.
 
 ## 0. To Start:
 
 1. Clone the repository:
 
 ```
-git clone https://github.com/SaiAbhinav/metaphor-detection-framebert-cs678.git
-cd metaphor-detection-framebert-cs678
+git clone https://github.com/liyucheng09/MetaphorFrame.git
+cd MetaphorFrame
 ```
 
 2. Install the required packages:
@@ -18,7 +18,7 @@ cd metaphor-detection-framebert-cs678
 ```
 pip install -r requirements.txt
 ```
-<!-- 
+
 ## 1. Run FrameBERT on Your data:
 
 3. If you just want to **run FrameBERT directly on your own data**, just run:
@@ -63,17 +63,17 @@ If you find this repository helpful for your research, please cite our paper:
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
-``` -->
+```
 
-<!-- For any questions or issues, please feel free to open an issue on GitHub or contact the authors directly. -->
+For any questions or issues, please feel free to open an issue on GitHub or contact the authors directly.
 
-## Reproduce the paper
+## Reproduce the paper (optional)
 
-<!-- You don't have to reproduce the results in the paper, if you just want to use a metaphor detection tool.
+You don't have to reproduce the results in the paper, if you just want to use a metaphor detection tool.
 
-But if you want to **reproduce FrameBERT from scratch**: -->
+But if you want to **reproduce FrameBERT from scratch**:
 
-1. Unzip the data:
+3. Unzip the data:
 
 ```
 unzip data_all.zip
@@ -81,21 +81,21 @@ unzip data_all.zip
 
 After unzipping, the frame data can be found at `data_all/open_sesame_v1_data`, and other data such as VUA, MOH, and TroFi datasets can be found in their respective directories.
 
-2. Prepare the `frame_finder` model first before we run the entire framewrok. Traning the frame model will take around 2 hours.
+4. Prepare the `frame_finder` model first before we run the entire framewrok. Traning the frame model will take around 2 hours.
 
 ```
 ./scripts/ff.sh
 ```
 
-3. config data path and `frame_finder` path in `main_config.cfg`
+5. config data path and `frame_finder` path in `main_config.cfg`
 
-4. Run the main script, training on `VUA18` will take about 5 hours:
+6. Run the main script, training on `VUA18` will take about 5 hours:
 
 ```
 ./scripts/run.sh
 ```
 
-<!-- ## Repository Structure
+## Repository Structure
 
 The repository is organized as follows:
 
@@ -104,7 +104,7 @@ The repository is organized as follows:
 - `main_config.cfg`: Configuration file for `main.py`.
 - `data_all.zip`: Compressed file containing all the data needed for the project.
 - `frame_finder/`: Directory containing the frame embedding model.
-- `requirements.txt`: Lists the required packages for the project. -->
+- `requirements.txt`: Lists the required packages for the project.
 
 ## Configuration
 
