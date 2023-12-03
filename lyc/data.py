@@ -15,6 +15,7 @@ import os
 import pickle
 import pandas as pd
 
+
 def get_tokenized_ds(scripts, tokenizer, max_length=64,
             slice=None, num_proc=None, shuffle=False, tokenize_func=None,
             batched=True, tokenize_cols=['tokens'], 
@@ -162,6 +163,7 @@ def get_tokenized_ds(scripts, tokenizer, max_length=64,
             return cols_needed_removed
 
     if isinstance(scripts, str):
+        print("-------",scripts)
         ds=load_dataset(scripts, **kwargs)
     elif isinstance(scripts, (hfds, DatasetDict)):
         ds=scripts
@@ -325,8 +327,8 @@ class processor:
     @classmethod
     def combine(cls, ds, group_column, combine_func):
         assert isinstance(ds, hfds), 'ds should be a datasets.Dataset object'
-        # ds = ds.to_pandas()
-        ds = pd.DataFrame(ds)
+        ds = ds.to_pandas()
+        # ds = pd.DataFrame(ds)
         combined = []
         for sent_id, group in ds.groupby(group_column) :
             combined.append(combine_func(group))

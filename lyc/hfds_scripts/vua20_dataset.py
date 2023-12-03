@@ -34,9 +34,11 @@ class Vua20(datasets.GeneratorBasedBuilder):
     
     def _split_generators(self, dl_manager):
         # print(self.config)
+        print("-----", self.config.data_dir)
+        file_path = "/scratch/schalla7/Project/MetaphorFrame-main/lyc/hfds_scripts/data/VUA18/"
         return [
-            datasets.SplitGenerator(name=datasets.Split.TRAIN, gen_kwargs={'filepath': os.path.join(self.config.data_dir, 'train.tsv') }),
-            datasets.SplitGenerator(name=datasets.Split.TEST, gen_kwargs={'filepath': os.path.join(self.config.data_dir, 'test.tsv')}),
+            datasets.SplitGenerator(name=datasets.Split.TRAIN, gen_kwargs={'filepath': os.path.join(file_path, 'train.tsv') }),
+            datasets.SplitGenerator(name=datasets.Split.TEST, gen_kwargs={'filepath': os.path.join(file_path, 'test.tsv')}),
         ]
     
     def _generate_examples(self, filepath):

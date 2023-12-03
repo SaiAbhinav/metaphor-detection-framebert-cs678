@@ -108,14 +108,15 @@ def write_predict_to_file(tokens, metaphor_labels, novel_metaphors, frame_labels
 
 if __name__ == '__main__':
 
-    input_file, = sys.argv[1:]
+    print("kabshbahdsbihafs", sys.argv)
+    input_file = sys.argv[1]
     assert os.path.exists(input_file), f'Input file {input_file} does not exist.'
 
     metaphor_model = 'CreativeLang/metaphor_detection_roberta_seq'
     novel_metaphor_model = 'CreativeLang/novel_metaphors'
     frame_model = 'liyucheng/frame_finder'
 
-    prediction_output_file = 'predictions.tsv'
+    prediction_output_file = sys.argv[2]
 
     metaphor_model = RobertaForTokenClassification.from_pretrained(metaphor_model, num_labels=2)
     tokenizer = RobertaTokenizerFast.from_pretrained('roberta-base', add_prefix_space=True)

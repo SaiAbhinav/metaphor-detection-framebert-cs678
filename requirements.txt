@@ -9,12 +9,12 @@ torchvision
 tqdm==4.56.0
 transformers
 datasets
+
+
 tensorboard
 fsspec==2023.9.2
 transformers[torch]
 
-####
-# NEW
-# pip install tensorboard
-# pip install fsspec==2023.9.2
-# pip install transformers[torch]
+dill==0.3.5.1
+
+## upgrade datasets

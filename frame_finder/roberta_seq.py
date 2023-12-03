@@ -1,3 +1,6 @@
+import os, sys
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(CURRENT_DIR))
 from lyc.utils import get_model, get_tokenizer
 from lyc.data import get_hf_ds_scripts_path, get_tokenized_ds, get_dataloader
 import sys
