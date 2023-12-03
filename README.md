@@ -28,7 +28,7 @@ python inference.py example_articles.json
 Put your own data in `example_articles.json`. Check out `example_articles.json` and `inference.py`, you can easily edit them to run the program on large amount of articles.
 
 This will produce the results to a `predictions.tsv`, which look like this:
-| Tokens | Borderline\*metaphor | Real*metaphors | Frame_label |
+| Tokens | Borderline\*metaphor | Real\*metaphors | Frame_label |
 |----------------|---------------------|----------------|-----------------|
 |Design| 0| 0| Coming_up_with|
 |:| 0| 0| *|
@@ -46,7 +46,7 @@ This will produce the results to a `predictions.tsv`, which look like this:
 |be |0| 0 |*|
 |back |1 |0 |_|
 |on |1 |0| Spatial_contact|
-|the |0 |0 _|
+|the |0 |0 |_|
 |right |0 |0 |Correctness|
 |track |1 |0| Roadways|
 |, |0 |0 |_|
